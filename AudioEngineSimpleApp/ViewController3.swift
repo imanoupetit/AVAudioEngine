@@ -54,7 +54,7 @@ class ViewController3: UIViewController {
     }
     
     func urlFor(filename: String) -> URL? {
-        if let dir = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.allDomainsMask, true).first {
+        if let dir = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.allDomainsMask, true).last {
             let path = dir.appending(filename)
             return URL(fileURLWithPath: path)
         }
@@ -78,26 +78,28 @@ class ViewController11: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let audioSession = AVAudioSession.sharedInstance()
-        try! audioSession.setCategory(AVAudioSessionCategoryPlayAndRecord)
+//        let audioSession = AVAudioSession.sharedInstance()
+//        try! audioSession.setCategory(AVAudioSessionCategoryPlayAndRecord)
 //        try! audioSession.setMode(AVAudioSessionModeMeasurement)
 //        try! audioSession.setActive(true, with: .notifyOthersOnDeactivation)
         
         engine.attach(player)
-        engine.connect(player, to: engine.mainMixerNode, format: engine.inputNode!.outputFormat(forBus: 0))
+        engine.connect(player, to: engine.mainMixerNode, format: engine.inputNode!.inputFormat(forBus: 0))
     }
     
     @IBAction func record(_ sender: AnyObject) {
-        guard let url = urlFor(filename: "test.caf") else { return }
-        //let url = URL(string: NSTemporaryDirectory().appending("test.caf"))!
+        //guard let url = urlFor(filename: "test.caf") else { return }
+        let url = URL(string: NSTemporaryDirectory().appending("test.caf"))!
+        print(url.absoluteString)
+        
         do {
-            file = try AVAudioFile(forWriting: url, settings: engine.inputNode!.outputFormat(forBus: 0).settings)
-            //file = try AVAudioFile(forWriting: url, settings: engine.inputNode!.inputFormat(forBus: 0).settings, commonFormat: engine.inputNode!.inputFormat(forBus: 0).commonFormat, interleaved: false)
+            file = try AVAudioFile(forWriting: url, settings: engine.inputNode!.inputFormat(forBus: 0).settings)
+            //file = try AVAudioFile(forWriting: url, settings: engine.mainMixerNode.outputFormat(forBus: 0).settings, commonFormat: engine.mainMixerNode.outputFormat(forBus: 0).commonFormat, interleaved: false)
         } catch {
             print("Error: \(error)")
         }
         
-        engine.inputNode?.installTap(onBus: 0, bufferSize: 1024, format: engine.inputNode!.outputFormat(forBus: 0)) { (buffer, time) -> Void in
+        engine.inputNode?.installTap(onBus: 0, bufferSize: 1024, format: engine.inputNode!.inputFormat(forBus: 0)) { (buffer, time) -> Void in
             do {
                 try self.file?.write(from: buffer)
                 print(buffer)
@@ -125,7 +127,7 @@ class ViewController11: UIViewController {
     }
     
     func urlFor(filename: String) -> URL? {
-        if let dir = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.allDomainsMask, true).first {
+        if let dir = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true).last {
             let path = dir.appending(filename)
             return URL(fileURLWithPath: path)
         }

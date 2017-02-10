@@ -25,13 +25,13 @@ class PlayerController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        guard let url = urlFor(filename: "test.caf") else { return }
-        //let url = URL(string: NSTemporaryDirectory().appending("test.caf"))!
+        //guard let url = urlFor(filename: "test.caf") else { return }
+        let url = URL(string: NSTemporaryDirectory().appending("test.caf"))!
         sourceURL = url
     }
     
     func urlFor(filename: String) -> URL? {
-        if let dir = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.allDomainsMask, true).first {
+        if let dir = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true).last {
             let path = dir.appending(filename)
             return URL(fileURLWithPath: path)
         }
