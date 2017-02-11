@@ -99,7 +99,7 @@
 				TargetAttributes = {
 					C7F4C1821E4B2600008ADBF9 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = SS584US562;
+						DevelopmentTeam = PNY7HN2WAP;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -265,7 +265,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = SS584US562;
+				DEVELOPMENT_TEAM = PNY7HN2WAP;
 				INFOPLIST_FILE = AudioEngineSimpleApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -279,7 +279,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = SS584US562;
+				DEVELOPMENT_TEAM = PNY7HN2WAP;
 				INFOPLIST_FILE = AudioEngineSimpleApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
