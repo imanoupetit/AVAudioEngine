@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C765809C1E50CDB20076972E /* PlayAndDistordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C765809B1E50CDB20076972E /* PlayAndDistordViewController.swift */; };
+		C765809E1E50CDF30076972E /* drumLoop.caf in Resources */ = {isa = PBXBuildFile; fileRef = C765809D1E50CDF30076972E /* drumLoop.caf */; };
+		C76580A01E50F3C20076972E /* DistordAndReverbViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C765809F1E50F3C20076972E /* DistordAndReverbViewController.swift */; };
 		C769483E1E4B36D000C196A6 /* RecordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C769483D1E4B36D000C196A6 /* RecordController.swift */; };
 		C76948421E4B694B00C196A6 /* PlayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76948411E4B694B00C196A6 /* PlayController.swift */; };
 		C7F4C1871E4B2600008ADBF9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F4C1861E4B2600008ADBF9 /* AppDelegate.swift */; };
@@ -16,6 +19,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C765809B1E50CDB20076972E /* PlayAndDistordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayAndDistordViewController.swift; sourceTree = "<group>"; };
+		C765809D1E50CDF30076972E /* drumLoop.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = drumLoop.caf; sourceTree = "<group>"; };
+		C765809F1E50F3C20076972E /* DistordAndReverbViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DistordAndReverbViewController.swift; sourceTree = "<group>"; };
 		C769483D1E4B36D000C196A6 /* RecordController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordController.swift; sourceTree = "<group>"; };
 		C76948411E4B694B00C196A6 /* PlayController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayController.swift; sourceTree = "<group>"; };
 		C7F4C1831E4B2600008ADBF9 /* AudioEngineSimpleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AudioEngineSimpleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -57,10 +63,13 @@
 			isa = PBXGroup;
 			children = (
 				C7F4C1861E4B2600008ADBF9 /* AppDelegate.swift */,
+				C765809B1E50CDB20076972E /* PlayAndDistordViewController.swift */,
+				C765809F1E50F3C20076972E /* DistordAndReverbViewController.swift */,
 				C769483D1E4B36D000C196A6 /* RecordController.swift */,
 				C76948411E4B694B00C196A6 /* PlayController.swift */,
 				C7F4C18A1E4B2600008ADBF9 /* Main.storyboard */,
 				C7F4C18D1E4B2600008ADBF9 /* Assets.xcassets */,
+				C765809D1E50CDF30076972E /* drumLoop.caf */,
 				C7F4C18F1E4B2600008ADBF9 /* LaunchScreen.storyboard */,
 				C7F4C1921E4B2600008ADBF9 /* Info.plist */,
 			);
@@ -129,6 +138,7 @@
 			files = (
 				C7F4C1911E4B2600008ADBF9 /* LaunchScreen.storyboard in Resources */,
 				C7F4C18E1E4B2600008ADBF9 /* Assets.xcassets in Resources */,
+				C765809E1E50CDF30076972E /* drumLoop.caf in Resources */,
 				C7F4C18C1E4B2600008ADBF9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -142,6 +152,8 @@
 			files = (
 				C7F4C1871E4B2600008ADBF9 /* AppDelegate.swift in Sources */,
 				C769483E1E4B36D000C196A6 /* RecordController.swift in Sources */,
+				C76580A01E50F3C20076972E /* DistordAndReverbViewController.swift in Sources */,
+				C765809C1E50CDB20076972E /* PlayAndDistordViewController.swift in Sources */,
 				C76948421E4B694B00C196A6 /* PlayController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
